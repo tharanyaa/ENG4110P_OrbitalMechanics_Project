@@ -7,13 +7,11 @@ function out = leapfrog_propagate(accelFun, tspan, Y0, dt, params)
 %   tspan    : [t0 tf]
 %   Y0       : 6x1 initial state
 %   dt       : fixed timestep (s)
-%   params   : struct (e.g. mu)
+%   params   : mu etc
 % Output struct fields:
 %   t : Nx1 time vector
 %   Y : Nx6 state history
-% Notes:
-% - This is a fixed-step symplectic method (good for orbits).
-% - Uses kick-drift-kick (velocity Verlet).
+%Velocity-Verlet Leapfrog, kick-step-kick
 
 t0 = tspan(1);
 tf = tspan(2);
