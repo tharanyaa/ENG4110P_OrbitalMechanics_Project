@@ -1,20 +1,16 @@
 function out = leapfrog_propagate(accelFun, tspan, Y0, dt, params)
 % leapfrog_propagate  Velocity-Verlet / Leapfrog integrator for second-order dynamics
-%
 % State Y = [r; v] with r,v as 3x1 vectors
 % accelFun signature: a = accelFun(t, r, v, params)
-%
 % Inputs:
 %   accelFun : function handle
 %   tspan    : [t0 tf]
 %   Y0       : 6x1 initial state
 %   dt       : fixed timestep (s)
 %   params   : struct (e.g. mu)
-%
 % Output struct fields:
 %   t : Nx1 time vector
 %   Y : Nx6 state history
-%
 % Notes:
 % - This is a fixed-step symplectic method (good for orbits).
 % - Uses kick-drift-kick (velocity Verlet).
